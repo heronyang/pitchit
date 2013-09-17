@@ -1,24 +1,26 @@
 //
-//  notePlayer.m
-//  Note Player
+//  musicNotePlayer.m
+//  Pitch It
 //
-//  Created by heron on 9/11/13.
-//  Copyright (c) 2013 heron. All rights reserved.
+//  Created by heng shumin on 13/9/17.
+//  Copyright (c) 2013年 heron & minnie. All rights reserved.
 //
 
-#import "notePlayer.h"
+#import "musicNotePlayer.h"
+
+
+#import "musicNotePlayer.h"
 #import <AVFoundation/AVFoundation.h>
 
 #define VOLUME 1.0f
 #define NOTE_LOWER_BOUND	1
 #define NOTE_UPPER_BOUND	88
 
-@interface notePlayer ()
+@interface musicNotePlayer()
 @property (strong, nonatomic)AVAudioPlayer *player;
 @end
 
-@implementation notePlayer
-
+@implementation musicNotePlayer
 // constructor
 - (id)init {
 	self = [super init];

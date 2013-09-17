@@ -108,6 +108,8 @@
 		1465D11717E772D2008DF419 /* 86.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1465D0BF17E772D2008DF419 /* 86.mp3 */; };
 		1465D11817E772D2008DF419 /* 87.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1465D0C017E772D2008DF419 /* 87.mp3 */; };
 		1465D11917E772D2008DF419 /* 88.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1465D0C117E772D2008DF419 /* 88.mp3 */; };
+		5390DF8117E85DF6009CC05F /* musicNotePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5390DF8017E85DF6009CC05F /* musicNotePlayer.m */; };
+		5397B6A017E8599F00CBD83B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5397B69F17E8599F00CBD83B /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -217,8 +219,9 @@
 		1465D0BF17E772D2008DF419 /* 86.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 86.mp3; sourceTree = "<group>"; };
 		1465D0C017E772D2008DF419 /* 87.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 87.mp3; sourceTree = "<group>"; };
 		1465D0C117E772D2008DF419 /* 88.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 88.mp3; sourceTree = "<group>"; };
-		1465D11A17E772E4008DF419 /* notePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = notePlayer.h; sourceTree = "<group>"; };
-		1465D11B17E772E4008DF419 /* notePlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = notePlayer.m; sourceTree = "<group>"; };
+		5390DF7F17E85DF6009CC05F /* musicNotePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = musicNotePlayer.h; sourceTree = "<group>"; };
+		5390DF8017E85DF6009CC05F /* musicNotePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = musicNotePlayer.m; sourceTree = "<group>"; };
+		5397B69F17E8599F00CBD83B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5397B6A017E8599F00CBD83B /* AVFoundation.framework in Frameworks */,
 				1465D03317E76D8C008DF419 /* UIKit.framework in Frameworks */,
 				1465D03517E76D8C008DF419 /* Foundation.framework in Frameworks */,
 				1465D03717E76D8C008DF419 /* CoreGraphics.framework in Frameworks */,
@@ -257,6 +261,7 @@
 		1465D03117E76D8C008DF419 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5397B69F17E8599F00CBD83B /* AVFoundation.framework */,
 				1465D03217E76D8C008DF419 /* UIKit.framework */,
 				1465D03417E76D8C008DF419 /* Foundation.framework */,
 				1465D03617E76D8C008DF419 /* CoreGraphics.framework */,
@@ -390,8 +395,8 @@
 		1465D11C17E772EC008DF419 /* Note Player */ = {
 			isa = PBXGroup;
 			children = (
-				1465D11A17E772E4008DF419 /* notePlayer.h */,
-				1465D11B17E772E4008DF419 /* notePlayer.m */,
+				5390DF7F17E85DF6009CC05F /* musicNotePlayer.h */,
+				5390DF8017E85DF6009CC05F /* musicNotePlayer.m */,
 				1465D06917E772D2008DF419 /* Piano */,
 			);
 			name = "Note Player";
@@ -557,6 +562,7 @@
 				1465D03F17E76D8C008DF419 /* main.m in Sources */,
 				1465D04317E76D8C008DF419 /* pitchitAppDelegate.m in Sources */,
 				1465D04F17E76D8C008DF419 /* pitchitViewController.m in Sources */,
+				5390DF8117E85DF6009CC05F /* musicNotePlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +685,7 @@
 				1465D05417E76D8C008DF419 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
