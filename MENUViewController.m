@@ -11,7 +11,7 @@
 
 #define WIDTH	200
 #define HEIGHT	200
-#define X		160
+#define X		190
 #define Y		200
 
 #define LIMIE_SCALE		15
@@ -51,7 +51,7 @@
 
 - (void)loadBackgroundImage {
 	self.backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(X, self.yOffset, WIDTH, HEIGHT)];
-    self.backgroundImage.image=[UIImage imageNamed:@"largeBackground.png"];
+    self.backgroundImage.image=[UIImage imageNamed:@"fullview.png"];
     [self.view addSubview:self.backgroundImage];
 }
 
@@ -78,7 +78,7 @@
 	NSLog(@"scale >> %f", self.currentScale);
 	
 	if (self.currentScale >= START_SHIFTING) {
-		self.yOffset += 6;
+		self.yOffset += 5.0;
 	}
 	
 	if (self.currentScale >= LIMIE_SCALE) {
@@ -126,26 +126,22 @@
     [self.view addSubview:levelThree];
 }
 
-- (IBAction)levelOne:(id)sender{
-    [self performSegueWithIdentifier:@"startGame" sender:self];
-}
-
 - (IBAction)buttonClicked:(id)sender {
     // new button clicked handler
     NSLog(@"pressed, game start here");
 	NSInteger levelNumber = ((UIView*)sender).tag;
 	self.selectedStage = levelNumber;
-    [self performSegueWithIdentifier:@"startGame" sender:self];
+    [self performSegueWithIdentifier:@"gameStart" sender:self];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"startGame"]) {
+    if ([[segue identifier] isEqualToString:@"gameStart"]) {
         stageOneViewController *dest= [segue destinationViewController ];
         dest.stage = self.selectedStage;
+		NSLog(@"stage = %d", self.selectedStage);
     }
 }
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

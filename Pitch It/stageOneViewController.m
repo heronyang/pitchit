@@ -8,10 +8,13 @@
 
 #import "stageOneViewController.h"
 #import "musicNotePlayer.h"
+#import "brain.h"
 
 #define STANDARD_OFFSET		40
 #define RECORD_SIGN_WIDTH	15
 #define RECORD_SIGN_HEIGHT	30
+#define REST_DIST			25
+#define REST_OFFSET			30
 
 #define STATE_EMPTY			0
 #define STATE_CORRECT		1
@@ -20,6 +23,8 @@
 #define NUMBER_QUESTIONS	10
 
 @interface stageOneViewController ()
+
+@property (strong, nonatomic) brain *myBrain;
 
 @property (nonatomic)	NSInteger magicNoteNumber;
 @property (strong, nonatomic) musicNotePlayer *myPlayer;
@@ -32,11 +37,26 @@
 @property (strong, nonatomic)	NSMutableArray *questions;
 @property (strong, nonatomic)	NSMutableArray *userAnswer;
 
+@property (strong, nonatomic) IBOutlet UIButton *whiteKey1;
+@property (strong, nonatomic) IBOutlet UIButton *whiteKey2;
+@property (strong, nonatomic) IBOutlet UIButton *whiteKey3;
+@property (strong, nonatomic) IBOutlet UIButton *whiteKey4;
+@property (strong, nonatomic) IBOutlet UIButton *whiteKey5;
+@property (strong, nonatomic) IBOutlet UIButton *whiteKey6;
+@property (strong, nonatomic) IBOutlet UIButton *whiteKey7;
+
 @end
 
 @implementation stageOneViewController
 
 // getter, constructor
+- (brain *)myBrain {
+	if (_myBrain == nil) {
+		_myBrain = [[brain alloc] init];
+	}
+	return _myBrain;
+}
+
 - (musicNotePlayer *)myPlayer {
     if (_myPlayer == nil) {
         _myPlayer = [[musicNotePlayer alloc] init];
@@ -77,21 +97,46 @@
 
 - (void)viewDidLoad
 {
+	NSLog(@"we're here");
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
 	[self drawRecordSigns];
 	self.currentIndex = 0;
 	self.score = 0;
+	
+	//
+	[self setupKeys];
+	
 	[self refreshMagicNoteNumber];
 	[self.myPlayer playNote:self.magicNoteNumber];
+}
+
+- (void)setupKeys {
+	UIImage *pressedWhiteKey = [UIImage imageNamed:@"pressed_white_key.png"];
+	UIImage *whiteKey = [UIImage imageNamed:@"white_key.png"];
+	[self.whiteKey1 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
+	[self.whiteKey2 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
+	[self.whiteKey3 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
+	[self.whiteKey4 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
+	[self.whiteKey5 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
+	[self.whiteKey6 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
+	[self.whiteKey7 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
+	
+	[self.whiteKey1 setBackgroundImage:whiteKey forState:UIControlStateNormal];
+	[self.whiteKey2 setBackgroundImage:whiteKey	forState:UIControlStateNormal];
+	[self.whiteKey3 setBackgroundImage:whiteKey forState:UIControlStateNormal];
+	[self.whiteKey4 setBackgroundImage:whiteKey forState:UIControlStateNormal];
+	[self.whiteKey5 setBackgroundImage:whiteKey forState:UIControlStateNormal];
+	[self.whiteKey6 setBackgroundImage:whiteKey forState:UIControlStateNormal];
+	[self.whiteKey7 setBackgroundImage:whiteKey forState:UIControlStateNormal];
 }
 
 #pragma draw ten record signs on the screen
 - (void)drawRecordSigns {
 	for (int i=1 ; i<=NUMBER_QUESTIONS ; i++) {
-		UIImage *image = [UIImage imageNamed:@"empty.png"];
-		CGRect frame = CGRectMake(i*20, 25, RECORD_SIGN_WIDTH, RECORD_SIGN_HEIGHT);
+		UIImage *image = [UIImage imageNamed:@"pppempty.png"];
+		CGRect frame = CGRectMake(i*REST_DIST + REST_OFFSET, 35, RECORD_SIGN_WIDTH, RECORD_SIGN_HEIGHT);
 		UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
 		[imageView setImage:image];
 		[self.view addSubview:imageView];
@@ -103,13 +148,13 @@
 	UIImageView *currentImageView = [self.recordSignsArray objectAtIndex:index];
 	switch (state) {
 		case STATE_EMPTY:
-			[currentImageView setImage:[UIImage imageNamed:@"empty.png"]];
+			[currentImageView setImage:[UIImage imageNamed:@"pppempty.png"]];
 			break;
 		case STATE_CORRECT:
-			[currentImageView setImage:[UIImage imageNamed:@"correct.png"]];
+			[currentImageView setImage:[UIImage imageNamed:@"pppcorrect.png"]];
 			break;
 		case STATE_WRONG:
-			[currentImageView setImage:[UIImage imageNamed:@"wrong.png"]];
+			[currentImageView setImage:[UIImage imageNamed:@"pppwrong.png"]];
 			break;
 			
 		default:
@@ -126,7 +171,7 @@
 	[self.myPlayer playNote:(STANDARD_OFFSET+keyNumber)];
 	
 	// check if they are the same
-	if ([self sameNoteOrNot:(STANDARD_OFFSET+keyNumber) compareWith:self.magicNoteNumber]) {
+	if ([self.myBrain sameNoteOrNot:(STANDARD_OFFSET+keyNumber) compareWith:self.magicNoteNumber]) {
 		NSLog(@"current");
 		[self changeRecord:self.currentIndex toState:STATE_CORRECT];
 		self.score += 10;
@@ -148,20 +193,11 @@
 	[self refreshMagicNoteNumber];
 }
 
-- (IBAction)settingPressed:(UIButton *)sender {
-	NSLog(@"setting pressed!");
-}
-
 - (IBAction)playMagicNote:(UIButton *)sender {
 	[self.myPlayer playNote:self.magicNoteNumber];
 }
 
 #pragma tools
-- (NSString *)noteNumberToText:(NSInteger)noteNumber {
-	NSArray *noteTextArr = [NSArray arrayWithObjects: @"C", @"C#/Db", @"D", @"D#/Eb", @"E", @"F", @"F#/Gb", @"G", @"G#/Ab", @"A", @"A#/Bb", @"B", nil];
-	return [noteTextArr objectAtIndex:((noteNumber-4)%12)];
-}
-
 - (void)refreshMagicNoteNumber {
 	NSLog(@"stage >> %d", self.stage);
 	switch (self.stage) {
@@ -180,19 +216,32 @@
 			break;
 	}
 	NSLog(@"new magic note number >> %d", self.magicNoteNumber);
-	[self.debugLabel setText:[self noteNumberToText:self.magicNoteNumber]];
+	[self.debugLabel setText:[self.myBrain noteNumberToText:self.magicNoteNumber]];
 }
+
+/*
+- (NSString *)noteNumberToText:(NSInteger)noteNumber {
+	NSArray *noteTextArr = [NSArray arrayWithObjects: @"C", @"C#/Db", @"D", @"D#/Eb", @"E", @"F", @"F#/Gb", @"G", @"G#/Ab", @"A", @"A#/Bb", @"B", nil];
+	return [noteTextArr objectAtIndex:((noteNumber-4)%12)];
+}
+
 
 - (BOOL)sameNoteOrNot:(NSInteger)note1 compareWith:(NSInteger)note2 {
 	NSLog(@"note1 >> %d\tnote2 >> %d", note1, note2);
 	return ((note1-note2) % 12) == 0;
 }
+ */
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"showScore"]) {
         stageOneViewController *dest= [segue destinationViewController ];
         dest.score = self.score;
+		dest.questions = self.questions;
+		dest.userAnswer = self.userAnswer;
     }
+}
+- (IBAction)goBack:(UIButton *)sender {
+	[self performSegueWithIdentifier:@"backMenu" sender:self];
 }
 
 #pragma memory
