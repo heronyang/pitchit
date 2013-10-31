@@ -6,6 +6,33 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="BxB-Yz-NxQ">
+            <objects>
+                <viewController id="SYE-sr-s1C" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uHY-rq-3Rh"/>
+                        <viewControllerLayoutGuide type="bottom" id="G5T-wy-Vjo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ePF-TY-ZKP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="iyR-FA-KVy">
+                                <rect key="frame" x="-11" y="20" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="aPw-tL-bE7" kind="modal" identifier="initStart" id="Dus-yK-gxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9RS-Nh-el6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-569" y="1070"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="K01-Sh-aAX">
             <objects>
                 <viewController id="aPw-tL-bE7" customClass="MENUViewController" sceneMemberID="viewController">
@@ -27,7 +54,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FA7-Sg-wCc">
-                                <rect key="frame" x="278" y="20" width="22" height="22"/>
+                                <rect key="frame" x="278" y="27" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="1A6-Hy-8gb"/>
@@ -41,14 +68,73 @@
                                     <action selector="infoPopup:" destination="aPw-tL-bE7" eventType="touchUpInside" id="YoY-Zz-N64"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miJ-bG-mu3">
+                                <rect key="frame" x="120" y="153" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="TNS-SN-4QS"/>
+                                    <constraint firstAttribute="width" constant="80" id="xEu-5q-3Tv"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="LightDropLogo.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="aPw-tL-bE7" eventType="touchUpInside" id="ott-V9-Drd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clN-Ze-8mN">
+                                <rect key="frame" x="120" y="265" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="kg8-Qx-keO"/>
+                                    <constraint firstAttribute="width" constant="80" id="tNG-cO-qya"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="DropLogo.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="aPw-tL-bE7" eventType="touchUpInside" id="xOO-bs-dFd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBF-EC-Nbf">
+                                <rect key="frame" x="120" y="379" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="cAD-k6-gGf"/>
+                                    <constraint firstAttribute="width" constant="80" id="ctj-lC-s4p"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="DeepDropLogo.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="aPw-tL-bE7" eventType="touchUpInside" id="SUe-Xc-l1d"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="level.png" translatesAutoresizingMaskIntoConstraints="NO" id="ur2-Gl-qnK">
+                                <rect key="frame" x="35" y="57" width="240" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="P9j-mh-4iT"/>
+                                    <constraint firstAttribute="width" constant="240" id="ZTZ-zM-6g1"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="clN-Ze-8mN" secondAttribute="centerX" id="35e-Po-n5L"/>
                             <constraint firstAttribute="trailing" secondItem="FA7-Sg-wCc" secondAttribute="trailing" constant="20" id="Akd-IE-akf"/>
-                            <constraint firstItem="FA7-Sg-wCc" firstAttribute="top" secondItem="U7K-Ik-DOn" secondAttribute="bottom" id="TKW-gi-6bh"/>
+                            <constraint firstItem="FA7-Sg-wCc" firstAttribute="top" secondItem="U7K-Ik-DOn" secondAttribute="bottom" constant="7" id="Fve-wB-Re4"/>
+                            <constraint firstItem="ur2-Gl-qnK" firstAttribute="leading" secondItem="b9M-3x-69Q" secondAttribute="leading" constant="35" id="QEe-Mm-Lap"/>
+                            <constraint firstItem="clN-Ze-8mN" firstAttribute="top" secondItem="miJ-bG-mu3" secondAttribute="bottom" constant="32" id="Sfa-4l-F0Y"/>
+                            <constraint firstItem="ZBF-EC-Nbf" firstAttribute="top" secondItem="clN-Ze-8mN" secondAttribute="bottom" constant="34" id="Tmh-VL-cSb"/>
                             <constraint firstAttribute="trailing" secondItem="ha6-NF-mHG" secondAttribute="trailing" id="Y4l-1K-dik"/>
+                            <constraint firstItem="miJ-bG-mu3" firstAttribute="top" secondItem="ur2-Gl-qnK" secondAttribute="bottom" constant="41" id="ZOq-3I-iqJ"/>
                             <constraint firstItem="ha6-NF-mHG" firstAttribute="leading" secondItem="b9M-3x-69Q" secondAttribute="leading" id="e5Q-m5-KmA"/>
+                            <constraint firstAttribute="trailing" secondItem="ur2-Gl-qnK" secondAttribute="trailing" constant="45" id="hJ8-KH-BPl"/>
+                            <constraint firstAttribute="centerX" secondItem="ZBF-EC-Nbf" secondAttribute="centerX" id="iSz-9I-GLm"/>
                             <constraint firstItem="vMh-od-yAF" firstAttribute="top" secondItem="ha6-NF-mHG" secondAttribute="bottom" id="qeQ-zp-VeS"/>
+                            <constraint firstItem="ur2-Gl-qnK" firstAttribute="top" secondItem="U7K-Ik-DOn" secondAttribute="bottom" constant="37" id="ug8-BI-B9k"/>
+                            <constraint firstAttribute="centerX" secondItem="miJ-bG-mu3" secondAttribute="centerX" id="wBu-jQ-7QN"/>
                             <constraint firstItem="ha6-NF-mHG" firstAttribute="top" secondItem="b9M-3x-69Q" secondAttribute="top" id="xkI-4P-Ne4"/>
                         </constraints>
                     </view>
@@ -81,7 +167,7 @@
                                     <constraint firstAttribute="width" constant="98" id="UK2-YG-uIV"/>
                                     <constraint firstAttribute="height" constant="105" id="ySb-hq-NJp"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="logo.png">
+                                <state key="normal" backgroundImage="DropLogo.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -328,6 +414,7 @@
                     </view>
                     <connections>
                         <outlet property="debugLabel" destination="xa2-Ml-Iiz" id="TWl-74-soV"/>
+                        <outlet property="middleButton" destination="M46-n1-9Su" id="gDr-BI-nS3"/>
                         <outlet property="whiteKey1" destination="NeR-iY-avK" id="C8U-QQ-mOZ"/>
                         <outlet property="whiteKey2" destination="Ocd-r2-QtW" id="OVX-Rh-v2M"/>
                         <outlet property="whiteKey3" destination="Tc8-z4-ZWW" id="53o-eh-Lia"/>
@@ -618,6 +705,9 @@
                                 <state key="normal" backgroundImage="RETRY.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="retryPressed:" destination="od0-e0-mP0" eventType="touchUpInside" id="xrI-X5-1Lv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -730,10 +820,14 @@
     <resources>
         <image name="0.png" width="500" height="500"/>
         <image name="100_percentage.png" width="600" height="600"/>
+        <image name="DeepDropLogo.png" width="237" height="232"/>
+        <image name="DropLogo.png" width="237" height="232"/>
+        <image name="LightDropLogo.png" width="237" height="232"/>
         <image name="MENU.png" width="377" height="144"/>
         <image name="RETRY.png" width="378" height="143"/>
         <image name="back.png" width="195" height="165"/>
         <image name="black_Key.png" width="86" height="196"/>
+        <image name="level.png" width="450" height="80"/>
         <image name="logo.png" width="237" height="232"/>
         <image name="new_score.png" width="586" height="118"/>
         <image name="pppempty.png" width="117" height="243"/>
@@ -746,7 +840,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jgf-8e-rkH"/>
+        <segue reference="Dus-yK-gxT"/>
         <segue reference="QWK-4E-yty"/>
     </inferredMetricsTieBreakers>
 </document>

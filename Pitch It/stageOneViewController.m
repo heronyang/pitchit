@@ -45,6 +45,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *whiteKey5;
 @property (strong, nonatomic) IBOutlet UIButton *whiteKey6;
 @property (strong, nonatomic) IBOutlet UIButton *whiteKey7;
+@property (strong, nonatomic) IBOutlet UIButton *middleButton;
 
 @end
 
@@ -110,7 +111,17 @@
 	[self setupKeys];
 	
 	[self refreshMagicNoteNumber];
+}
+
+- (void)playCurrentNote:(id)sender {
+	[self.middleButton setBackgroundImage:[UIImage imageNamed:@"OriInnerLogo.png"] forState:UIControlStateNormal];
 	[self.myPlayer playNote:self.magicNoteNumber];
+	[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(changeMiddleImageBack:) userInfo:nil repeats:NO];
+}
+
+
+- (void)changeMiddleImageBack:(id)sender {
+	[self.middleButton setBackgroundImage:[UIImage imageNamed:@"DropLogo.png"] forState:UIControlStateNormal];
 }
 
 - (void)setupKeys {
@@ -234,6 +245,7 @@
 	
 	NSLog(@"new magic note number >> %d", self.magicNoteNumber);
 	[self.debugLabel setText:[self.myBrain noteNumberToText:self.magicNoteNumber]];
+	[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(playCurrentNote:) userInfo:nil repeats:NO];
 }
 
 /*

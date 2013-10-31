@@ -44,9 +44,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 	
-	self.yOffset = Y;
-	[self loadBackgroundImage];
-	[self startAnimation];
+	//self.yOffset = Y;
+	//[self loadBackgroundImage];
+	//[self startAnimation];
 }
 
 - (void)loadBackgroundImage {
@@ -135,7 +135,7 @@
 }
 - (IBAction)infoPopup:(UIButton *)sender {
 	UIAlertView *popupMessage = [[UIAlertView alloc] initWithTitle:@"Pitch It"
-														   message:@"Pitch the note\nDeveloper: Minnie & Heron\npitchit.nctucs.net"
+														   message:@"Pick your level from easy to hard.\nPress the center note to replay, then answer on the piano below!\nHave Fun!\n\nDeveloper: Shumin & Heron @ NCTU"
 														  delegate:Nil
 												 cancelButtonTitle:@"Get it"
 												 otherButtonTitles:nil, nil];

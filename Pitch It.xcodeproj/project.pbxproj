@@ -115,6 +115,11 @@
 		1465D11817E772D2008DF419 /* 87.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1465D0C017E772D2008DF419 /* 87.mp3 */; };
 		1465D11917E772D2008DF419 /* 88.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1465D0C117E772D2008DF419 /* 88.mp3 */; };
 		147EBEB818156B2E00F284EF /* brain.m in Sources */ = {isa = PBXBuildFile; fileRef = 147EBEB718156B2E00F284EF /* brain.m */; };
+		14867CBD18226267000DBC0E /* DeepDropLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14867CBA18226267000DBC0E /* DeepDropLogo.png */; };
+		14867CBE18226267000DBC0E /* DropLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14867CBB18226267000DBC0E /* DropLogo.png */; };
+		14867CBF18226267000DBC0E /* LightDropLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14867CBC18226267000DBC0E /* LightDropLogo.png */; };
+		14867CC11822629C000DBC0E /* level.png in Resources */ = {isa = PBXBuildFile; fileRef = 14867CC01822629C000DBC0E /* level.png */; };
+		14867CC318226431000DBC0E /* OriInnerLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14867CC218226431000DBC0E /* OriInnerLogo.png */; };
 		149A46961815562D00C7C70B /* 0_percentage.png in Resources */ = {isa = PBXBuildFile; fileRef = 149A468B1815562D00C7C70B /* 0_percentage.png */; };
 		149A46971815562D00C7C70B /* 100_percentage.png in Resources */ = {isa = PBXBuildFile; fileRef = 149A468C1815562D00C7C70B /* 100_percentage.png */; };
 		149A46981815562D00C7C70B /* 10_percentage.png in Resources */ = {isa = PBXBuildFile; fileRef = 149A468D1815562D00C7C70B /* 10_percentage.png */; };
@@ -300,6 +305,11 @@
 		1465D0C117E772D2008DF419 /* 88.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 88.mp3; sourceTree = "<group>"; };
 		147EBEB618156B2E00F284EF /* brain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brain.h; sourceTree = "<group>"; };
 		147EBEB718156B2E00F284EF /* brain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = brain.m; sourceTree = "<group>"; };
+		14867CBA18226267000DBC0E /* DeepDropLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeepDropLogo.png; sourceTree = "<group>"; };
+		14867CBB18226267000DBC0E /* DropLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropLogo.png; sourceTree = "<group>"; };
+		14867CBC18226267000DBC0E /* LightDropLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightDropLogo.png; sourceTree = "<group>"; };
+		14867CC01822629C000DBC0E /* level.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level.png; sourceTree = "<group>"; };
+		14867CC218226431000DBC0E /* OriInnerLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OriInnerLogo.png; sourceTree = "<group>"; };
 		149A468B1815562D00C7C70B /* 0_percentage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_percentage.png; sourceTree = "<group>"; };
 		149A468C1815562D00C7C70B /* 100_percentage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100_percentage.png; sourceTree = "<group>"; };
 		149A468D1815562D00C7C70B /* 10_percentage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10_percentage.png; sourceTree = "<group>"; };
@@ -586,6 +596,10 @@
 		14BE799717F6D82E008F6A47 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				14867CC01822629C000DBC0E /* level.png */,
+				14867CBA18226267000DBC0E /* DeepDropLogo.png */,
+				14867CBB18226267000DBC0E /* DropLogo.png */,
+				14867CBC18226267000DBC0E /* LightDropLogo.png */,
 				149A468A1815562D00C7C70B /* percentage */,
 				14D881CF180EEBB6003C0FE3 /* last_page */,
 				14D881C9180EE2AA003C0FE3 /* back.png */,
@@ -596,6 +610,7 @@
 				14D881BE180ED9AE003C0FE3 /* ppempty.png */,
 				14D881BF180ED9AE003C0FE3 /* ppwrong.png */,
 				14CC3AF7180EA00B00ACB6E2 /* black_Key.png */,
+				14867CC218226431000DBC0E /* OriInnerLogo.png */,
 				14CC3AF8180EA00B00ACB6E2 /* logo.png */,
 				14CC3AF9180EA00B00ACB6E2 /* pressed_black_Key.png */,
 				14CC3AFA180EA00B00ACB6E2 /* pressed_white_key.png */,
@@ -686,7 +701,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = pitchit;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "heron & minnie";
 				TargetAttributes = {
 					1465D02E17E76D8C008DF419 = {
@@ -742,6 +757,7 @@
 				1465D0CB17E772D2008DF419 /* 10.mp3 in Resources */,
 				1465D0CC17E772D2008DF419 /* 11.mp3 in Resources */,
 				1465D0CD17E772D2008DF419 /* 12.mp3 in Resources */,
+				14867CBF18226267000DBC0E /* LightDropLogo.png in Resources */,
 				149A46991815562D00C7C70B /* 20_percentage.png in Resources */,
 				14D881C0180ED9AE003C0FE3 /* ppcorrect.png in Resources */,
 				14D881FA180EEBB6003C0FE3 /* p20.png in Resources */,
@@ -809,6 +825,7 @@
 				1465D0F617E772D2008DF419 /* 53.mp3 in Resources */,
 				1465D0F717E772D2008DF419 /* 54.mp3 in Resources */,
 				14CC3AF4180E9BE200ACB6E2 /* pcorrect.png in Resources */,
+				14867CC318226431000DBC0E /* OriInnerLogo.png in Resources */,
 				149A46981815562D00C7C70B /* 10_percentage.png in Resources */,
 				1465D0F817E772D2008DF419 /* 55.mp3 in Resources */,
 				1465D0F917E772D2008DF419 /* 56.mp3 in Resources */,
@@ -849,13 +866,16 @@
 				1465D10D17E772D2008DF419 /* 76.mp3 in Resources */,
 				14D88213180EEDA1003C0FE3 /* 5.png in Resources */,
 				1465D10E17E772D2008DF419 /* 77.mp3 in Resources */,
+				14867CBD18226267000DBC0E /* DeepDropLogo.png in Resources */,
 				14D88217180EEDA1003C0FE3 /* 9.png in Resources */,
+				14867CC11822629C000DBC0E /* level.png in Resources */,
 				14D8820F180EEDA1003C0FE3 /* 1.png in Resources */,
 				1465D10F17E772D2008DF419 /* 78.mp3 in Resources */,
 				1465D11017E772D2008DF419 /* 79.mp3 in Resources */,
 				1465D11117E772D2008DF419 /* 80.mp3 in Resources */,
 				1465D11217E772D2008DF419 /* 81.mp3 in Resources */,
 				1465D11317E772D2008DF419 /* 82.mp3 in Resources */,
+				14867CBE18226267000DBC0E /* DropLogo.png in Resources */,
 				149A46971815562D00C7C70B /* 100_percentage.png in Resources */,
 				149A469E1815562D00C7C70B /* 70_percentage.png in Resources */,
 				1465D11417E772D2008DF419 /* 83.mp3 in Resources */,
@@ -990,7 +1010,7 @@
 				INFOPLIST_FILE = "Pitch It/Pitch It-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1007,7 +1027,7 @@
 				INFOPLIST_FILE = "Pitch It/Pitch It-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
