@@ -8,6 +8,7 @@
 
 #import "stageOneViewController.h"
 #import "musicNotePlayer.h"
+#import "scorePageViewController.h"
 #import "brain.h"
 
 #define STANDARD_OFFSET		40
@@ -115,16 +116,27 @@
 - (void)setupKeys {
 	UIImage *pressedWhiteKey = [UIImage imageNamed:@"pressed_white_key.png"];
 	UIImage *whiteKey = [UIImage imageNamed:@"white_key.png"];
-	[self.whiteKey1 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
-	[self.whiteKey2 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
-	[self.whiteKey3 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
-	[self.whiteKey4 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
-	[self.whiteKey5 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
-	[self.whiteKey6 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
-	[self.whiteKey7 setBackgroundImage:pressedWhiteKey forState:UIControlStateHighlighted];
+	//UIImage *clearImage = [UIImage imageNamed:@"clear.png"];
+	self.whiteKey1.adjustsImageWhenHighlighted = NO;
+	self.whiteKey1.showsTouchWhenHighlighted = NO;
+	[self.whiteKey1 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected | UIControlStateHighlighted];
+	[self.whiteKey2 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected | UIControlStateHighlighted];
+	[self.whiteKey3 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected | UIControlStateHighlighted];
+	[self.whiteKey4 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected | UIControlStateHighlighted];
+	[self.whiteKey5 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected | UIControlStateHighlighted];
+	[self.whiteKey6 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected | UIControlStateHighlighted];
+	[self.whiteKey7 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected | UIControlStateHighlighted];
+	
+	[self.whiteKey1 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected];
+	[self.whiteKey2 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected];
+	[self.whiteKey3 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected];
+	[self.whiteKey4 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected];
+	[self.whiteKey5 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected];
+	[self.whiteKey6 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected];
+	[self.whiteKey7 setBackgroundImage:pressedWhiteKey forState:UIControlStateSelected];
 	
 	[self.whiteKey1 setBackgroundImage:whiteKey forState:UIControlStateNormal];
-	[self.whiteKey2 setBackgroundImage:whiteKey	forState:UIControlStateNormal];
+	[self.whiteKey2 setBackgroundImage:whiteKey forState:UIControlStateNormal];
 	[self.whiteKey3 setBackgroundImage:whiteKey forState:UIControlStateNormal];
 	[self.whiteKey4 setBackgroundImage:whiteKey forState:UIControlStateNormal];
 	[self.whiteKey5 setBackgroundImage:whiteKey forState:UIControlStateNormal];
@@ -200,7 +212,10 @@
 #pragma tools
 - (void)refreshMagicNoteNumber {
 	NSLog(@"stage >> %d", self.stage);
-	switch (self.stage) {
+	
+	NSInteger magicNoteNumberTmp = self.magicNoteNumber;
+	do {
+		switch (self.stage) {
 		case 1:
 			self.magicNoteNumber = arc4random()%12 + 40;
 			break;
@@ -214,7 +229,9 @@
 			self.magicNoteNumber = 40;
 			NSLog(@"error!");
 			break;
-	}
+		}
+	} while (self.magicNoteNumber == magicNoteNumberTmp);
+	
 	NSLog(@"new magic note number >> %d", self.magicNoteNumber);
 	[self.debugLabel setText:[self.myBrain noteNumberToText:self.magicNoteNumber]];
 }
@@ -234,10 +251,11 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"showScore"]) {
-        stageOneViewController *dest= [segue destinationViewController ];
+        scorePageViewController *dest= [segue destinationViewController ];
         dest.score = self.score;
 		dest.questions = self.questions;
 		dest.userAnswer = self.userAnswer;
+		dest.selectedStage = self.stage;
     }
 }
 - (IBAction)goBack:(UIButton *)sender {

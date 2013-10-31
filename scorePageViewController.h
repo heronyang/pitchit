@@ -11,6 +11,7 @@
 @interface scorePageViewController : UIViewController
 
 @property (nonatomic) NSInteger score;
+@property (nonatomic) NSInteger selectedStage;
 @property (strong, nonatomic)	NSMutableArray *questions;
 @property (strong, nonatomic)	NSMutableArray *userAnswer;
 

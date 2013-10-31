@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9B777FC6-1354-42E5-8BAA-E396A168F40B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Pitch It</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CB49D7EB-6BF0-4A27-A29B-858E78869286</key>
+		<string>ssh://plate.tw/~/pitchit.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Pitch It.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CB49D7EB-6BF0-4A27-A29B-858E78869286</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://plate.tw/~/pitchit.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CB49D7EB-6BF0-4A27-A29B-858E78869286</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CB49D7EB-6BF0-4A27-A29B-858E78869286</string>
+			<key>IDESourceControlWCCName</key>
+			<string>pitchit</string>
+		</dict>
+	</array>
+</dict>
+</plist>

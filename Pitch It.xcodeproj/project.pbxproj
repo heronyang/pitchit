@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141EBE03181965A200CA5AB0 /* MENU.png in Resources */ = {isa = PBXBuildFile; fileRef = 141EBE01181965A200CA5AB0 /* MENU.png */; };
+		141EBE04181965A200CA5AB0 /* RETRY.png in Resources */ = {isa = PBXBuildFile; fileRef = 141EBE02181965A200CA5AB0 /* RETRY.png */; };
+		14337A7F1820B1990020A2D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14337A7E1820B1990020A2D1 /* Images.xcassets */; };
 		1439F3F51805A5C700308EFC /* correct.png in Resources */ = {isa = PBXBuildFile; fileRef = 1439F3F21805A5C700308EFC /* correct.png */; };
 		1439F3F61805A5C700308EFC /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 1439F3F31805A5C700308EFC /* empty.png */; };
 		1439F3F71805A5C700308EFC /* wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = 1439F3F41805A5C700308EFC /* wrong.png */; };
@@ -183,6 +186,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		141EBE01181965A200CA5AB0 /* MENU.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MENU.png; sourceTree = "<group>"; };
+		141EBE02181965A200CA5AB0 /* RETRY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RETRY.png; sourceTree = "<group>"; };
+		14337A7E1820B1990020A2D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1439F3F21805A5C700308EFC /* correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = correct.png; sourceTree = "<group>"; };
 		1439F3F31805A5C700308EFC /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
 		1439F3F41805A5C700308EFC /* wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrong.png; sourceTree = "<group>"; };
@@ -382,6 +388,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14337A7D1820AFFA0020A2D1 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		1465D02617E76D8C008DF419 = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +426,7 @@
 		1465D03817E76D8C008DF419 /* Pitch It */ = {
 			isa = PBXGroup;
 			children = (
+				14337A7D1820AFFA0020A2D1 /* iPad */,
 				14BE799717F6D82E008F6A47 /* images */,
 				1465D11C17E772EC008DF419 /* Note Player */,
 				1465D04117E76D8C008DF419 /* pitchitAppDelegate.h */,
@@ -426,6 +440,7 @@
 				147EBEB718156B2E00F284EF /* brain.m */,
 				538F30EA17F1348B002ECBDF /* MENUViewController.h */,
 				538F30EB17F1348B002ECBDF /* MENUViewController.m */,
+				14337A7E1820B1990020A2D1 /* Images.xcassets */,
 				1465D03917E76D8C008DF419 /* Supporting Files */,
 			);
 			path = "Pitch It";
@@ -614,6 +629,8 @@
 		14D881CF180EEBB6003C0FE3 /* last_page */ = {
 			isa = PBXGroup;
 			children = (
+				141EBE01181965A200CA5AB0 /* MENU.png */,
+				141EBE02181965A200CA5AB0 /* RETRY.png */,
 				14D88202180EEDA1003C0FE3 /* 0.png */,
 				14D88203180EEDA1003C0FE3 /* 1.png */,
 				14D88204180EEDA1003C0FE3 /* 2.png */,
@@ -671,6 +688,11 @@
 				CLASSPREFIX = pitchit;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "heron & minnie";
+				TargetAttributes = {
+					1465D02E17E76D8C008DF419 = {
+						DevelopmentTeam = 2XX3ZFN6CJ;
+					};
+				};
 			};
 			buildConfigurationList = 1465D02A17E76D8C008DF419 /* Build configuration list for PBXProject "Pitch It" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -775,6 +797,7 @@
 				149A469B1815562D00C7C70B /* 40_percentage.png in Resources */,
 				14D881CE180EE6B1003C0FE3 /* fullview2.png in Resources */,
 				1465D0EF17E772D2008DF419 /* 46.mp3 in Resources */,
+				14337A7F1820B1990020A2D1 /* Images.xcassets in Resources */,
 				1465D0F017E772D2008DF419 /* 47.mp3 in Resources */,
 				1465D0F117E772D2008DF419 /* 48.mp3 in Resources */,
 				1439F3F51805A5C700308EFC /* correct.png in Resources */,
@@ -800,6 +823,7 @@
 				1465D0FF17E772D2008DF419 /* 62.mp3 in Resources */,
 				1465D10017E772D2008DF419 /* 63.mp3 in Resources */,
 				1465D10117E772D2008DF419 /* 64.mp3 in Resources */,
+				141EBE04181965A200CA5AB0 /* RETRY.png in Resources */,
 				1465D10217E772D2008DF419 /* 65.mp3 in Resources */,
 				14D88201180EEBB6003C0FE3 /* p90.png in Resources */,
 				1465D10317E772D2008DF419 /* 66.mp3 in Resources */,
@@ -821,6 +845,7 @@
 				1465D10B17E772D2008DF419 /* 74.mp3 in Resources */,
 				1465D10C17E772D2008DF419 /* 75.mp3 in Resources */,
 				1439F3F71805A5C700308EFC /* wrong.png in Resources */,
+				141EBE03181965A200CA5AB0 /* MENU.png in Resources */,
 				1465D10D17E772D2008DF419 /* 76.mp3 in Resources */,
 				14D88213180EEDA1003C0FE3 /* 5.png in Resources */,
 				1465D10E17E772D2008DF419 /* 77.mp3 in Resources */,
@@ -957,10 +982,16 @@
 		1465D05317E76D8C008DF419 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hsiang Yu Yang (2R83YA3WWJ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pitch It/Pitch It-Prefix.pch";
 				INFOPLIST_FILE = "Pitch It/Pitch It-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos7.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -968,10 +999,16 @@
 		1465D05417E76D8C008DF419 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hsiang Yu Yang (2R83YA3WWJ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pitch It/Pitch It-Prefix.pch";
 				INFOPLIST_FILE = "Pitch It/Pitch It-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos7.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

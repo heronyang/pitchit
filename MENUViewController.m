@@ -133,6 +133,14 @@
 	self.selectedStage = levelNumber;
     [self performSegueWithIdentifier:@"gameStart" sender:self];
 }
+- (IBAction)infoPopup:(UIButton *)sender {
+	UIAlertView *popupMessage = [[UIAlertView alloc] initWithTitle:@"Pitch It"
+														   message:@"Pitch the note\nDeveloper: Minnie & Heron\npitchit.nctucs.net"
+														  delegate:Nil
+												 cancelButtonTitle:@"Get it"
+												 otherButtonTitles:nil, nil];
+	[popupMessage show];
+}
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"gameStart"]) {
