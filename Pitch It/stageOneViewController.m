@@ -46,6 +46,11 @@
 @property (strong, nonatomic) IBOutlet UIButton *whiteKey6;
 @property (strong, nonatomic) IBOutlet UIButton *whiteKey7;
 @property (strong, nonatomic) IBOutlet UIButton *middleButton;
+@property (strong, nonatomic) IBOutlet UIButton *blackKey1;
+@property (strong, nonatomic) IBOutlet UIButton *blackKey2;
+@property (strong, nonatomic) IBOutlet UIButton *blackKey3;
+@property (strong, nonatomic) IBOutlet UIButton *blackKey4;
+@property (strong, nonatomic) IBOutlet UIButton *blackKey5;
 
 @end
 
@@ -113,15 +118,46 @@
 	[self refreshMagicNoteNumber];
 }
 
+- (void)disableAllKeys {
+	[self.whiteKey1 setEnabled:NO];
+	[self.whiteKey2 setEnabled:NO];
+	[self.whiteKey3 setEnabled:NO];
+	[self.whiteKey4 setEnabled:NO];
+	[self.whiteKey5 setEnabled:NO];
+	[self.whiteKey6 setEnabled:NO];
+	[self.whiteKey7 setEnabled:NO];
+	[self.blackKey1 setEnabled:NO];
+	[self.blackKey2 setEnabled:NO];
+	[self.blackKey3 setEnabled:NO];
+	[self.blackKey4 setEnabled:NO];
+	[self.blackKey5 setEnabled:NO];
+}
+
+- (void)enableAllKeys {
+	[self.whiteKey1 setEnabled:YES];
+	[self.whiteKey2 setEnabled:YES];
+	[self.whiteKey3 setEnabled:YES];
+	[self.whiteKey4 setEnabled:YES];
+	[self.whiteKey5 setEnabled:YES];
+	[self.whiteKey6 setEnabled:YES];
+	[self.whiteKey7 setEnabled:YES];
+	[self.blackKey1 setEnabled:YES];
+	[self.blackKey2 setEnabled:YES];
+	[self.blackKey3 setEnabled:YES];
+	[self.blackKey4 setEnabled:YES];
+	[self.blackKey5 setEnabled:YES];
+}
+
 - (void)playCurrentNote:(id)sender {
 	[self.middleButton setBackgroundImage:[UIImage imageNamed:@"OriInnerLogo.png"] forState:UIControlStateNormal];
 	[self.myPlayer playNote:self.magicNoteNumber];
-	[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(changeMiddleImageBack:) userInfo:nil repeats:NO];
+	[NSTimer scheduledTimerWithTimeInterval:1.3 target:self selector:@selector(changeMiddleImageBack:) userInfo:nil repeats:NO];
 }
 
 
 - (void)changeMiddleImageBack:(id)sender {
 	[self.middleButton setBackgroundImage:[UIImage imageNamed:@"DropLogo.png"] forState:UIControlStateNormal];
+	[self enableAllKeys];
 }
 
 - (void)setupKeys {
@@ -212,8 +248,9 @@
 	if (self.currentIndex >= NUMBER_QUESTIONS) {
 		NSLog(@"game ends");
 		[self performSegueWithIdentifier:@"showScore" sender:self];
+	} else {
+		[self refreshMagicNoteNumber];
 	}
-	[self refreshMagicNoteNumber];
 }
 
 - (IBAction)playMagicNote:(UIButton *)sender {
@@ -245,21 +282,9 @@
 	
 	NSLog(@"new magic note number >> %d", self.magicNoteNumber);
 	[self.debugLabel setText:[self.myBrain noteNumberToText:self.magicNoteNumber]];
-	[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(playCurrentNote:) userInfo:nil repeats:NO];
+	[self disableAllKeys];
+	[NSTimer scheduledTimerWithTimeInterval:1.3 target:self selector:@selector(playCurrentNote:) userInfo:nil repeats:NO];
 }
-
-/*
-- (NSString *)noteNumberToText:(NSInteger)noteNumber {
-	NSArray *noteTextArr = [NSArray arrayWithObjects: @"C", @"C#/Db", @"D", @"D#/Eb", @"E", @"F", @"F#/Gb", @"G", @"G#/Ab", @"A", @"A#/Bb", @"B", nil];
-	return [noteTextArr objectAtIndex:((noteNumber-4)%12)];
-}
-
-
-- (BOOL)sameNoteOrNot:(NSInteger)note1 compareWith:(NSInteger)note2 {
-	NSLog(@"note1 >> %d\tnote2 >> %d", note1, note2);
-	return ((note1-note2) % 12) == 0;
-}
- */
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"showScore"]) {

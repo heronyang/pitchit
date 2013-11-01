@@ -413,6 +413,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="blackKey1" destination="t2v-c5-1Si" id="2T5-76-SLe"/>
+                        <outlet property="blackKey2" destination="H4W-gO-kb7" id="jNW-OS-tJc"/>
+                        <outlet property="blackKey3" destination="U0h-go-drt" id="Kbr-FM-NC0"/>
+                        <outlet property="blackKey4" destination="1SK-qC-6ak" id="Gy5-Yd-k8y"/>
+                        <outlet property="blackKey5" destination="ycy-ax-am5" id="yjm-ux-i0P"/>
                         <outlet property="debugLabel" destination="xa2-Ml-Iiz" id="TWl-74-soV"/>
                         <outlet property="middleButton" destination="M46-n1-9Su" id="gDr-BI-nS3"/>
                         <outlet property="whiteKey1" destination="NeR-iY-avK" id="C8U-QQ-mOZ"/>
