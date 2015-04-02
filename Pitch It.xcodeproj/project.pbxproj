@@ -120,7 +120,6 @@
 		14867CBF18226267000DBC0E /* LightDropLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14867CBC18226267000DBC0E /* LightDropLogo.png */; };
 		14867CC11822629C000DBC0E /* level.png in Resources */ = {isa = PBXBuildFile; fileRef = 14867CC01822629C000DBC0E /* level.png */; };
 		14867CC318226431000DBC0E /* OriInnerLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14867CC218226431000DBC0E /* OriInnerLogo.png */; };
-		14867CC918226BEA000DBC0E /* initStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14867CC818226BEA000DBC0E /* initStartViewController.m */; };
 		149A46961815562D00C7C70B /* 0_percentage.png in Resources */ = {isa = PBXBuildFile; fileRef = 149A468B1815562D00C7C70B /* 0_percentage.png */; };
 		149A46971815562D00C7C70B /* 100_percentage.png in Resources */ = {isa = PBXBuildFile; fileRef = 149A468C1815562D00C7C70B /* 100_percentage.png */; };
 		149A46981815562D00C7C70B /* 10_percentage.png in Resources */ = {isa = PBXBuildFile; fileRef = 149A468D1815562D00C7C70B /* 10_percentage.png */; };
@@ -311,8 +310,6 @@
 		14867CBC18226267000DBC0E /* LightDropLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightDropLogo.png; sourceTree = "<group>"; };
 		14867CC01822629C000DBC0E /* level.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level.png; sourceTree = "<group>"; };
 		14867CC218226431000DBC0E /* OriInnerLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OriInnerLogo.png; sourceTree = "<group>"; };
-		14867CC718226BE9000DBC0E /* initStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = initStartViewController.h; sourceTree = "<group>"; };
-		14867CC818226BEA000DBC0E /* initStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = initStartViewController.m; sourceTree = "<group>"; };
 		149A468B1815562D00C7C70B /* 0_percentage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_percentage.png; sourceTree = "<group>"; };
 		149A468C1815562D00C7C70B /* 100_percentage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100_percentage.png; sourceTree = "<group>"; };
 		149A468D1815562D00C7C70B /* 10_percentage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10_percentage.png; sourceTree = "<group>"; };
@@ -411,8 +408,6 @@
 		1465D02617E76D8C008DF419 = {
 			isa = PBXGroup;
 			children = (
-				14867CC718226BE9000DBC0E /* initStartViewController.h */,
-				14867CC818226BEA000DBC0E /* initStartViewController.m */,
 				1465D03817E76D8C008DF419 /* Pitch It */,
 				1465D03117E76D8C008DF419 /* Frameworks */,
 				1465D03017E76D8C008DF419 /* Products */,
@@ -921,7 +916,6 @@
 				1465D04317E76D8C008DF419 /* pitchitAppDelegate.m in Sources */,
 				5390DF8117E85DF6009CC05F /* musicNotePlayer.m in Sources */,
 				147EBEB818156B2E00F284EF /* brain.m in Sources */,
-				14867CC918226BEA000DBC0E /* initStartViewController.m in Sources */,
 				538F30EC17F1348B002ECBDF /* MENUViewController.m in Sources */,
 				53A2DB2D17F169F700628DD5 /* stageOneViewController.m in Sources */,
 			);
@@ -1010,12 +1004,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hsiang Yu Yang (2R83YA3WWJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pitch It/Pitch It-Prefix.pch";
 				INFOPLIST_FILE = "Pitch It/Pitch It-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1027,12 +1023,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hsiang Yu Yang (2R83YA3WWJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pitch It/Pitch It-Prefix.pch";
 				INFOPLIST_FILE = "Pitch It/Pitch It-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
